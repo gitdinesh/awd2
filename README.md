@@ -43,4 +43,13 @@ push removed branch to origin so then git server can remove that branch from rem
  	git branch --delete --remotes origin/<BRANCH NAME>
 	git branch -dr  origin/<BRANCH NAME>
 
+## MERGE FILES IN 
+
+while your in child branch, run following commands
+	
+	git merge <PARENT BRANCH NAME>
+
+Before you merge make sure to commit changes in parent branch
+
+
 
