@@ -1,4 +1,4 @@
-## GIT 
+# GIT 
 
 ## ADD EXISTING PROJECT TO THE GIT
 If you have existing project that need to configure with git, use following commands
@@ -27,5 +27,24 @@ If you want to get all the branches listed in remote repository, you can use fet
 	
 ## LIST LOCAL GIT BRANCHES 
 list existing branches in local repository
+	
 	git branch
+
+## REMOVE BRANCHES
+When you want to remove branches from the git you can use below commands. There are 2 step while removing branches 
+### 1) Remove branch from local repo
+Remove local branch 	
+	
+	git branch -d <BRANCH NAME>
+	
+### 2) Remove branch from origin   
+push removed branch to origin so then git server can remove that branch from remote
+	
+	git push origin <BRANCH NAME>
+
+Instead of above git commands you can use straight command to delate branch from remote
+	
+	git push origin --delete <BRANCH NAME>
+
+
 	
