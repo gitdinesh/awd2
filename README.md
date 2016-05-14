@@ -15,3 +15,12 @@
 	
 	Once you do the changes to the project you need to commit and push to the remote branch.
 	You do not need to follow all the steps mentioned above.
+
+# GET REMOTE BRANCHES TO LOCAL
+	git fetch origin
+	git checkout <BRANCH NAME>
+	
+# LIST LOCAL GIT BRANCHES 
+
+	git branch
+	
