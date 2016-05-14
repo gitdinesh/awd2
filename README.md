@@ -40,11 +40,7 @@ Remove local branch
 ### 2) Remove branch from origin   
 push removed branch to origin so then git server can remove that branch from remote
 	
-	git push origin <BRANCH NAME>
-
-Instead of above git commands you can use straight command to delate branch from remote
-	
-	git push origin --delete <BRANCH NAME>
+ 	git branch --delete --remotes origin/<BRANCH NAME>
+	git branch -dr  origin/<BRANCH NAME>
 
 
-	
