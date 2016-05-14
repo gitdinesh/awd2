@@ -8,7 +8,7 @@
 	
 4) git commit -a // Add comment regarding  your changes
 
-5) git remote  origin <GIT REPO URL>
+5) git remote add origin <GIT REPO URL>
 	
 6) git push origin <BRANCH NAME>
 	
