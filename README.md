@@ -47,4 +47,11 @@ Instead of above git commands you can use straight command to delate branch from
 	git push origin --delete <BRANCH NAME>
 
 
+
+## UPDATE LOCAL BRANCH WITH REMOTE BRANCH
+You MUST commit and push your local changes to remote branch once you done with it. 
+Before you start project you MUST get latest source code from the repository. Doing this will save large conflict issues end of code merging stage
+
+	git pull origin <BRANCH NAME>
+
 	
