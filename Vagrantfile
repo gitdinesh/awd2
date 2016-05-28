@@ -1,7 +1,10 @@
 Vagrant.configure("2") do |config|
+
+    #Uncomment If you have trusty64 in your local
+    #config.vm.box_url = "file:///location/to/trusty64.box"
     config.vm.box = "ubuntu/trusty64"
 	config.vm.network :private_network, ip: '10.10.10.120'
-
+        
 	config.vm.synced_folder "../", "/web", :owner=> 'vagrant', :group=>'www-data', :mount_options => ['dmode=770', 'fmode=770']
 
    

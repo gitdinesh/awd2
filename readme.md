@@ -18,3 +18,7 @@ If you already have VagrantFile place it in your project directory and execute f
     
     vagrant up   
  
+ This will take some time to download ubuntu version from the internet. However If you have 
+ downloaded ubuntu server version (trusty64.box) uncomment 
+    
+    config.vm.box_url = "file:///location/to/trusty64.box"
