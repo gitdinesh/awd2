@@ -26,5 +26,14 @@ In order to print it you can use variable name with $ sign
 [Example](https://github.com/Piusha/awd2/blob/shell_scripts/variables.sh)
 
 
+##Working with Numbers
+
+In linux all the variables are act as a string. In order to perform erithmatic operations expr command can be used
+
+    expr $num1 + $num2
+
+[Example](https://github.com/Piusha/awd2/blob/shell_scripts/numbers.sh)
+
+
 
 
