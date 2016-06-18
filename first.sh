@@ -1,4 +1,6 @@
 #!/bin/bash
+# First Shel script tha execute basic shell commands 
+
 
 clear
 echo "List all files in this directory "
