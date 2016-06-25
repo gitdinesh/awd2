@@ -150,3 +150,23 @@ and it does so more efficiently than repeated if...elif statements.
 
 
 
+#Looping 
+
+##While Loop
+
+The while loop enables you to execute a set of commands repeatedly until some condition occurs. 
+It is usually used when you need to manipulate the value of a variable repeatedly.
+
+    while command
+    do
+        #Statement(s) to be executed if command is true
+    done
+
+##For loop
+The for loop operate on lists of items. It repeats a set of 
+commands for every item in a list.
+
+    for var in word1 word2 ... wordN
+    do
+    #Statement(s) to be executed for every word.
+    done

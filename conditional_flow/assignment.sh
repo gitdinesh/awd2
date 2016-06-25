@@ -6,7 +6,6 @@ clear
 
 echo " =========== Welcome to globalpay deployment script ==============="
 
-
 echo " 1. Production"
 echo " 2. QA"
 echo " 3. Development"
