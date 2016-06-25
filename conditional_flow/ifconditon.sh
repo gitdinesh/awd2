@@ -5,7 +5,7 @@
 
 
 clear
-clear
+
 echo " =========== IF COMMAND========="
 
 echo " Enter user name"
@@ -24,3 +24,5 @@ then
 else 
     echo " Ooopse invalid usename and password"
 fi
+
+
