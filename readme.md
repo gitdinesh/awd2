@@ -1,6 +1,6 @@
 #Conditional flow
 
-## If condition
+##If condition
 
 The if...else...fi statement is the next form of control statement that allows Shell to execute statements in more controlled way and making
  decision between two choices.
@@ -10,7 +10,7 @@ The if...else...fi statement is the next form of control statement that allows S
         //Condition body
     fi
 
-## Relational Operators
+##Relational Operators
 
 Bourne Shell supports following relational operators which are 
 specific to numeric values. These operators would not work 
@@ -39,7 +39,7 @@ between "ten" and "twenty".
     [ $a -le $b ] is true.
 
 
-## Boolean Operators
+##Boolean Operators
 
 
     !	This is logical negation. This inverts a true condition 
@@ -53,9 +53,54 @@ between "ten" and "twenty".
     condition would be true otherwise it would be false.	[ $a -lt 20 -a $b -gt 100 ] is false.
 
 
+##File Test Operators
 
+There are following operators to test various properties associated with a Unix file.
+Assume a variable file holds an existing file name "test" whose size is 100 bytes and has read, 
+write and execute permission on −
+    -b file	Checks if file is a block special file if yes then condition becomes true.
+    [ -b $file ] is false.
 
-## String Operators
+    -c file	Checks if file is a character special file if yes then condition becomes true.	
+    [ -c $file ] is false.
+
+    -d file	Check if file is a directory if yes then condition becomes true.	
+    [ -d $file ] is not true.
+
+    -f file	Check if file is an ordinary file as opposed to a directory or special file if yes then condition becomes true.	
+    [ -f $file ] is true.
+
+    -g file	Checks if file has its set group ID (SGID) bit set if yes then condition becomes true.	
+    [ -g $file ] is false.
+
+    -k file	Checks if file has its sticky bit set if yes then condition becomes true.	
+    [ -k $file ] is false.
+
+    -p file	Checks if file is a named pipe if yes then condition becomes true.	
+    [ -p $file ] is false.
+
+    -t file	Checks if file descriptor is open and associated with a terminal if yes then condition becomes true.	
+    [ -t $file ] is false.
+
+    -u file	Checks if file has its set user id (SUID) bit set if yes then condition becomes true.	
+    [ -u $file ] is false.
+
+    -r file	Checks if file is readable if yes then condition becomes true.	
+    [ -r $file ] is true.
+
+    -w file	Check if file is writable if yes then condition becomes true.	
+    [ -w $file ] is true.
+
+    -x file	Check if file is execute if yes then condition becomes true.	
+    [ -x $file ] is true.
+
+    -s file	Check if file has size greater than 0 if yes then condition becomes true.	
+    [ -s $file ] is true.
+
+    -e file	Check if file exists. Is true even if file is a directory but exists.	
+    [ -e $file ] is true.
+
+##String Operators
 
 
     =	Checks if the value of two operands are equal or not, 
@@ -78,7 +123,7 @@ between "ten" and "twenty".
 
 
 
-# Case Esac
+## Case Esac
 
 You can use multiple if...elif statements to perform a multiway 
 branch. However, this is not always the best solution, 
@@ -102,3 +147,6 @@ and it does so more efficiently than repeated if...elif statements.
         "x") exit
         ;;
     esac
+
+
+
