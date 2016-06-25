@@ -75,3 +75,30 @@ between "ten" and "twenty".
 
     str	Check if str is not the empty string. 
     If it is empty then it returns false.	[ $a ] is not false.
+
+
+
+# Case Esac
+
+You can use multiple if...elif statements to perform a multiway 
+branch. However, this is not always the best solution, 
+especially when all of the branches depend on the value of a 
+single variable.
+Shell support case...esac statement which handles exactly this situation, 
+and it does so more efficiently than repeated if...elif statements.
+
+    clear
+    echo " ================== case esac=================="
+    echo "Enter option"
+    read -p "[ a,b,c,or x ] : " opt
+
+    case "$opt" in
+        "a") echo " You have selected a "
+        ;;
+        "b") echo " You have selected b"
+        ;;
+        "c") echo " You have selected c"
+        ;;
+        "x") exit
+        ;;
+    esac
