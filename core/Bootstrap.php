@@ -12,6 +12,14 @@ class Bootstrap{
         $url = explode("/",$url);
 
 
+
+        //HANDLE DEFAULT ROOT PAGE
+        if( empty($url[0])){
+            $this->invokeDefualtPage();
+            return false;
+        }
+       
+
         /**
         * Controller will be in first argument in the URL
         * Load Controller
@@ -28,12 +36,24 @@ class Bootstrap{
 
         $class_name = $url[0]."Controller";
         $controller = new $class_name;
-        $controller->index();
+        
 
 
         if(isset($url[1])){
             $controller->{$url[1]}();
+        }else {
+            $controller->index();
         }
 
+    }
+
+    /**
+     * Invoke default home path when route load root path`
+     * http:// abc.com
+     */
+    private function invokeDefualtPage(){
+            require("controller/HomeController.php");
+            $controller = new HomeController();
+            $controller->index();
     }
 }
