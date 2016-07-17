@@ -1,30 +1,101 @@
-#MVC in PHP
+#Apache2,PHP,Mysql instalation  and Configuration with Ubuntu 14.4 
 
-##MVC Components
+##Installing Apache 2
 
-###Model: 
+Before install any utilities or softwares make sure to update Ubuntu version and other relevent application. 
+NOTE:  You dont need to Ubntu update every time, However make sure everything up to date.
+	
+	sudo apt-get update
+	sudo apt-get -y install apache2 
 
-The Model component corresponds to all the data related logic that the user works with. This can represent either the data that is being transferred between the View and Controller components or any other business logic related data. For example, a Customer object will retrieve the customer information from the database, manipulate it and update it data back to the database or use it to render data.
+###Install PHP5: 
 
-###View: 
+	sudo apt-get install software-properties-common python-software-properties -y
+	sudo add-apt-repository ppa:ondrej/php5-5.6 -y
+	sudo apt-get -y update
 
-The View component is used for all the UI logic of the application. For example, the Customer view would include all the UI components such as text boxes, dropdowns, etc. that the final user interacts with.
+	sudo apt-get -y install php5 php-pear php5-curl php5-mysql php5-gd
 
-###Controller: 
+###install MySQL: 
 
-Controllers act as an interface between Model and View components to process all the business logic and incoming requests, manipulate data using the Model component and interact with the Views to render the final output. For example, the Customer controller would handle all the interactions and inputs from the Customer View and update the database using the Customer Model. The same controller would be used to view the Customer data.
+	sudo apt-get update
+	sudo apt-get install -y mysql-server-5.6
+
+
+###Install Phpmyadmin : 
+	
+	sudo apt-get install phpmyadmin
+
+
+###Enable Mode rewrite  
+
+Without enabling mode rewrite in apache2, Pretty URL routing will not work. in order to enable it,
+
+*Locate /etc/apache2/apache2.conf.
+*Change AllowOverride None   to AllowOverride All 
+
+And then run
+
+	sudo a2enmod rewrite 
+	sudo service apache2 restart
 
 
 
-### install MySQL On to Ubuntu
+###Change default document root 
 
-Install mySQL 5.6 on to ubuntu 
+When installing apache2 default document root will be /var/www/html. You can change document root in /var/etc/apache2/sites-available/000-default.conf
 
-    sudo apt-get update
-    sudo apt-get install -y mysql-server-5.6
+###Configure Apache for multiple sites
 
-### install PhpMyAdmin On to Ubuntu
+Apache allow you to host multiple sites that are host in deferent document roots. Following are the apache configurations for host your site in apache. 
 
-Install Phpmyadmin on to the ubuntu
+Assume I have domain named abc.com. I want it to point my 10.10.10.120 host.
 
-    sudo apt-get install phpmyadmin
+
+*STEP 1
+ 
+ Create directory named abc.com under /var/www/. You can create directory without .com. It is more clear to have  same directory name and domain name. So this will not conflict when you are working with more sites in same host.
+
+*STEP 2
+ 
+ Create .conf file with the same name that you already created in STEP 1. You can do this following command
+ 
+ 	sudo cp /etc/apache2/000-defualt.conf /etc/apache2/abc.com.conf
+ 	sudo vi abc.com.conf
+
+ In abc.com.conf change,
+
+ 	ServerName abc.com
+ 	DocumentRoot /var/www/abc.com
+
+
+*STEP 3
+ 
+ Enable site in order to make it work
+
+ 	sudo a2ensite abc.com.conf
+ 	sudo service apache2 restart
+ 	
+
+Your Apache configurations are done ....
+
+
+
+###Point domain name to the host/VPS server
+   
+Login to abc.com domain manage portal, Add your VPS IP address  as  A record.
+
+
+###Point Local Domain name to vagrant box
+
+While you are in Master PC (Windows or Mac OSX) Change Host file in your local PC. In Windows you can find it  somewhere ins System32 
+
+
+###Do the symbolic link between vagrant web and /var/www
+
+Since our source code straighter way sync with web on ubuntu. you need to make your source code available in /var/www/abc.com direcotory.
+for this you can do 
+	
+	sudo ln -s /web/your_project_folder/* /var/www/abc.com
+
+
