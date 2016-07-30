@@ -10,6 +10,8 @@
       * Load View Based on the Action call
       */
      public function render($view_name){
-         require("view/{$view_name}.php");
+         $this->content = "view/{$view_name}.php";
+         $theme_name = THEME.".php";
+         require("view/Layout/$theme_name");
      }
  }

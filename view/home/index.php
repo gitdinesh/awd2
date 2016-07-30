@@ -1,27 +1,3 @@
-<?php $abloutPath="http://mvc.loc/view/home/" ?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<title>Free CSS template by ChocoTemplates.com</title>
-	<link rel="stylesheet" href="<?php echo $abloutPath; ?>css/style.css" type="text/css" media="all" />
-	<!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
-
-	<meta name="keywwords" content="Shop Around - Great free html template for on-line shop. Use it as a start point for your on line business. The template can be easily implemented in many open source E-commerce platforms" />
-	<meta name="description" content="Shop Around - Great free html template for on-line shop. Use it as a start point for your on line business. The template can be easily implemented in many open source E-commerce platforms" />
-
-	<!-- JS -->
-	<script src="<?php echo $abloutPath; ?>js/jquery-1.4.1.min.js" type="text/javascript"></script>
-	<script src="<?php echo $abloutPath; ?>js/jquery.jcarousel.pack.js" type="text/javascript"></script>
-	<script src="<?php echo $abloutPath; ?>js/jquery-func.js" type="text/javascript"></script>
-	<!-- End JS -->
-
-</head>
-<body>
-
-<!-- Shell -->
-<div class="shell">
 
 	<!-- Header -->
 	<div id="header">
@@ -62,10 +38,10 @@
 			<div id="slider" class="box">
 				<div id="slider-holder">
 					<ul>
-					    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/slide1.jpg" alt="" /></a></li>
-					    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/slide1.jpg" alt="" /></a></li>
-					    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/slide1.jpg" alt="" /></a></li>
-					    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/slide1.jpg" alt="" /></a></li>
+					    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/slide1.jpg" alt="" /></a></li>
+					    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/slide1.jpg" alt="" /></a></li>
+					    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/slide1.jpg" alt="" /></a></li>
+					    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/slide1.jpg" alt="" /></a></li>
 					</ul>
 				</div>
 				<div id="slider-nav">
@@ -82,7 +58,7 @@
 				<div class="cl">&nbsp;</div>
 				<ul>
 				    <li>
-				    	<a href="#"><img src="<?php echo $abloutPath; ?>css/images/big1.jpg" alt="" /></a>
+				    	<a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/big1.jpg" alt="" /></a>
 				    	<div class="product-info">
 				    		<h3>LOREM IPSUM</h3>
 				    		<div class="product-desc">
@@ -93,7 +69,7 @@
 				    	</div>
 			    	</li>
 			    	<li>
-				    	<a href="#"><img src="<?php echo $abloutPath; ?>css/images/big1.jpg" alt="" /></a>
+				    	<a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/big1.jpg" alt="" /></a>
 				    	<div class="product-info">
 				    		<h3>LOREM IPSUM</h3>
 				    		<div class="product-desc">
@@ -104,7 +80,7 @@
 				    	</div>
 			    	</li>
 			    	<li class="last">
-				    	<a href="#"><img src="<?php echo $abloutPath; ?>css/images/big1.jpg" alt="" /></a>
+				    	<a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/big1.jpg" alt="" /></a>
 				    	<div class="product-info">
 				    		<h3>LOREM IPSUM</h3>
 				    		<div class="product-desc">
@@ -163,7 +139,23 @@
 			<!-- End Search -->
 
 			<!-- Categories -->
-		 <?php include_once('view/Categories/index.php'); ?>
+			
+
+
+			<div class="box categories">
+				<h2>Categories <span></span></h2>
+				<div class="box-content">
+					<ul>
+						<?php foreach ($this->catagories as $key => $value) : ?>
+							<?php if ($value['parent_id'] == ""): ?>
+								<li class=""><a href="#"> <?php echo $value['title']; ?></a></li>
+							<?php endif; ?>	
+						<?php endforeach;?>
+
+
+					</ul>
+				</div>
+			</div>
 			<!-- End Categories -->
 
 		</div>
@@ -180,17 +172,17 @@
 		<div class="more-products">
 			<div class="more-products-holder">
 				<ul>
-				    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/small1.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/small2.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/small3.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/small4.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/small5.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/small6.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/small7.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/small1.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/small2.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/small3.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="<?php echo $abloutPath; ?>css/images/small4.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/small1.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/small2.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/small3.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/small4.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/small5.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/small6.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/small7.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/small1.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/small2.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/small3.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="<?php echo PUBLIC_PATH; ?>css/images/small4.jpg" alt="" /></a></li>
 				    <li><a href="#"><img src="css/images/small5.jpg" alt="" /></a></li>
 				    <li><a href="#"><img src="css/images/small6.jpg" alt="" /></a></li>
 				    <li><a href="#"><img src="css/images/small7.jpg" alt="" /></a></li>
@@ -239,30 +231,3 @@
 
 	</div>
 	<!-- End Side Full -->
-
-	<!-- Footer -->
-	<div id="footer">
-		<p class="left">
-			<a href="#">Home</a>
-			<span>|</span>
-			<a href="#">Support</a>
-			<span>|</span>
-			<a href="#">My Account</a>
-			<span>|</span>
-			<a href="#">The Store</a>
-			<span>|</span>
-			<a href="#">Contact</a>
-		</p>
-		<p class="right">
-			&copy; 2010 Shop Around.
-			Design by <a href="http://chocotemplates.com" target="_blank" title="The Sweetest CSS Templates WorldWide">Chocotemplates.com</a>
-		</p>
-	</div>
-	<!-- End Footer -->
-
-</div>
-<!-- End Shell -->
-
-
-</body>
-</html>

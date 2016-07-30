@@ -11,7 +11,11 @@
      }
 
      function index(){
-         $this->view->render("home/index");
+
+            $catagories = new CatagoriesModel();
+            $this->view->catagories= $catagories->getAll();
+            
+            $this->view->render("home/index");
      }
 
 
