@@ -34,4 +34,4 @@ Route::get('/cal/sub/{num1}/{num2}','CalculatorController@substract');
 
 
 Route::get('/items','ItemsController@index');
-
+Route::get('/item/{id}','ItemsController@show');

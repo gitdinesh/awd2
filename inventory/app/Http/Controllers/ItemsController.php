@@ -73,7 +73,30 @@ class ItemsController extends Controller
      */
     public function show($id)
     {
-        //
+        //  
+        $items = [
+            [
+                "image"=>"images/product-img1.jpg",
+                "name"=>"Whirlpool LTE5243D 3.4 CuFt....",
+                "price"=>"$839.93"
+            ],
+            [
+                "image"=>"images/product-img2.jpg",
+                "name"=>"Whirlpool LTE5243D 3.4 CuFt....",
+                "price"=>"$800.93"
+            ],
+            [
+                "image"=>"images/product-img3.jpg",
+                "name"=>"Whirlpool LTE5243D 3.4 CuFt....",
+                "price"=>"$900.93"
+            ],
+            [
+                "image"=>"images/product-img4.jpg",
+                "name"=>"Whirlpool LTE5243D 3.4 CuFt....",
+                "price"=>"$1000.93"
+            ],
+        ];
+        return view('items.show')->with('item',$items[$id]);
     }
 
     /**

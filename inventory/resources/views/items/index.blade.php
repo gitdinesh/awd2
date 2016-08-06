@@ -1,50 +1,29 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.master_layout')
+    
+    
+@section("title","Items page")
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+@section('content')
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-       
-
-                <div class="">
-                    list All Items
-                    <ul>
-                    @foreach($items as $item)
-                        <li> {{$item['name']}}</li>
-                    @endforeach
-                    </ul>
-                </div>
-    </body>
-</html>
+    @foreach($items as $item)
+					
+			
+	          		
+				  <div class="grid_1_of_4 images_1_of_4">
+					 <h4><a href="preview.html">{{$item['name']}}</a></h4>
+					  <a href="{{ URL::to('/item/show/'.$item['name']) }}"><img src="{{$item['image']}}" alt="" /></a>
+					  <div class="price-details">
+				       <div class="price-number">
+							<p><span class="rupees">{{$item['price']}}</span></p>
+					    </div>
+					       		<div class="add-cart">								
+									<h4><a href="preview.html">More Info</a></h4>
+							     </div>
+							 <div class="clear"></div>
+					</div>					 
+				</div>
+				@endforeach
+					
+@endsection    
+    
