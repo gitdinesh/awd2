@@ -1,7 +1,7 @@
 #Laravel 5.2 
 
 
-## Routes
+## HTTP Methods
 
 
 ## GET Method
@@ -202,3 +202,25 @@ The server will send the following message in response to the above request:
 	TRACE / HTTP/1.1
 	Host: www.test.com
 	User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)
+
+
+
+
+##Laravel Routes
+
+	Route::get($uri, $callback);
+	Route::post($uri, $callback);
+	Route::put($uri, $callback);
+	Route::patch($uri, $callback);
+	Route::delete($uri, $callback);
+	Route::options($uri, $callback);
+
+
+ In example
+
+ 	Route::get('/', function () {
+    	return "This is GET Method";
+	});
+ 	Route::get('/cal/sub/{num1}/{num2}','CalculatorController@substract');
+
+
