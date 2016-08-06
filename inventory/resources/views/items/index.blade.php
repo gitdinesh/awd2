@@ -36,10 +36,15 @@
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">ITEMS</div>
-            </div>
-        </div>
+       
+
+                <div class="">
+                    list All Items
+                    <ul>
+                    @foreach($items as $item)
+                        <li> {{$item['name']}}</li>
+                    @endforeach
+                    </ul>
+                </div>
     </body>
 </html>

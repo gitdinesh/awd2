@@ -31,3 +31,7 @@ Route::get('/test2','TestController@test2');
 Route::get('/cal/add/{num1}/{num2}','CalculatorController@add');
 Route::get('/cal/sub/{num1}/{num2}','CalculatorController@substract');
 
+
+
+Route::get('/items','ItemsController@index');
+
